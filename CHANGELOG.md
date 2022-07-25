@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * Modify class name
+
+## 0.0.3
+
+* Modify readme

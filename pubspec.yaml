@@ -1,6 +1,6 @@
 name: ios_willpop_transition_theme
 description: A Flutter package to solve the conflict between ios sliding back and Willpop.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/fluttercandies/ios_willpop_transition_theme
 
 environment:
