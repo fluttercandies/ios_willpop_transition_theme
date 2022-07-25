@@ -19,9 +19,9 @@ Widget build(BuildContext context) {
                   /// Set as needed
                   pageTransitionsTheme: const PageTransitionsTheme(
                         builders: {
-                              TargetPlatform.iOS: IosWillpopTransitionsBuilder(),
-                              TargetPlatform.android: IosWillpopTransitionsBuilder(),
-                              TargetPlatform.macOS: IosWillpopTransitionsBuilder(),
+                              TargetPlatform.iOS: IOSWillPopTransitionsBuilder(),
+                              TargetPlatform.android: IOSWillPopTransitionsBuilder(),
+                              TargetPlatform.macOS: IOSWillPopTransitionsBuilder(),
                         },
                   ),
             ),
