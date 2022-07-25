@@ -32,5 +32,5 @@ Widget build(BuildContext context) {
 ```
 
 <video id="video" controls="" preload="none" poster="preview">
-      <source id="mp4" src="https://raw.githubusercontent.com/fluttercandies/ios_willpop_transition_theme/master/preview/pre.mp4" type="video/mp4">
+      <source id="mp4" src="https://raw.githubusercontent.com/fluttercandies/ios_willpop_transition_theme/main/preview/pre.gif" type="video/mp4">
 </videos>
