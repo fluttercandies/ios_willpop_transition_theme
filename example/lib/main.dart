@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: {
-            TargetPlatform.iOS: IosWillpopTransitionsBuilder(),
-            TargetPlatform.android: IosWillpopTransitionsBuilder(),
-            TargetPlatform.macOS: IosWillpopTransitionsBuilder(),
+            TargetPlatform.iOS: IOSWillPopTransitionsBuilder(),
+            TargetPlatform.android: IOSWillPopTransitionsBuilder(),
+            TargetPlatform.macOS: IOSWillPopTransitionsBuilder(),
           },
         ),
         primarySwatch: Colors.blue,

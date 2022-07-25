@@ -19,9 +19,9 @@ const int _kMaxDroppedSwipePageForwardAnimationTime = 800; // Milliseconds.
 // user releases a page mid swipe.
 const int _kMaxPageBackAnimationTime = 300; // Milliseconds.
 
-class IosWillpopTransitionsBuilder extends PageTransitionsBuilder {
+class IOSWillPopTransitionsBuilder extends PageTransitionsBuilder {
   /// Constructs a page transition animation that matches the iOS transition.
-  const IosWillpopTransitionsBuilder();
+  const IOSWillPopTransitionsBuilder();
 
   @override
   Widget buildTransitions<T>(
@@ -31,12 +31,12 @@ class IosWillpopTransitionsBuilder extends PageTransitionsBuilder {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    return IosWillpopTransitionsMixin.buildPageTransitions<T>(
+    return IOSWillPopTransitionsMixin.buildPageTransitions<T>(
         route, context, animation, secondaryAnimation, child);
   }
 }
 
-mixin IosWillpopTransitionsMixin<T> on PageRoute<T> {
+mixin IOSWillPopTransitionsMixin<T> on PageRoute<T> {
   /// Builds the primary contents of the route.
   @protected
   Widget buildContent(BuildContext context);
@@ -77,7 +77,7 @@ mixin IosWillpopTransitionsMixin<T> on PageRoute<T> {
   @override
   void didChangePrevious(Route<dynamic>? previousRoute) {
     final String? previousTitleString =
-        previousRoute is IosWillpopTransitionsMixin
+        previousRoute is IOSWillPopTransitionsMixin
             ? previousRoute.title
             : null;
     if (_previousTitle == null) {
@@ -101,7 +101,7 @@ mixin IosWillpopTransitionsMixin<T> on PageRoute<T> {
   @override
   bool canTransitionTo(TransitionRoute<dynamic> nextRoute) {
     // Don't perform outgoing animation if the next route is a fullscreen dialog.
-    return nextRoute is IosWillpopTransitionsMixin &&
+    return nextRoute is IOSWillPopTransitionsMixin &&
         !nextRoute.fullscreenDialog;
   }
 
@@ -204,7 +204,7 @@ mixin IosWillpopTransitionsMixin<T> on PageRoute<T> {
   ///
   /// See also:
   ///
-  ///  * [IosWillpopTransitionsBuilder], which uses this method to define a
+  ///  * [IOSWillPopTransitionsBuilder], which uses this method to define a
   ///    [PageTransitionsBuilder] for the [PageTransitionsTheme].
   static Widget buildPageTransitions<T>(
     PageRoute<T> route,
