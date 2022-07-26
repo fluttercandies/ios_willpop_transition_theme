@@ -2,6 +2,8 @@
 
 A Flutter package to solve the conflict between ios sliding back and Willpop.
 
+related issue: [#14203](https://github.com/flutter/flutter/issues/14203)
+
 [![pub package](https://img.shields.io/pub/v/ios_willpop_transition_theme?logo=dart&label=stable&style=flat-square)](https://pub.dev/packages/ios_willpop_transition_theme)
 [![GitHub stars](https://img.shields.io/github/stars/fluttercandies/ios_willpop_transition_theme?logo=github&style=flat-square)](https://github.com/fluttercandies/ios_willpop_transition_theme/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/fluttercandies/ios_willpop_transition_theme?logo=github&style=flat-square)](https://github.com/fluttercandies/ios_willpop_transition_theme/network/members)
