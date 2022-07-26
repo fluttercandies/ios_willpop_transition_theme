@@ -19,6 +19,9 @@ const int _kMaxDroppedSwipePageForwardAnimationTime = 800; // Milliseconds.
 // user releases a page mid swipe.
 const int _kMaxPageBackAnimationTime = 300; // Milliseconds.
 
+// Execute the delay of the Forward animation
+const int _kAnimateForwardDelay = 20; // Milliseconds.
+
 class IOSWillPopTransitionsBuilder extends PageTransitionsBuilder {
   /// Constructs a page transition animation that matches the iOS transition.
   const IOSWillPopTransitionsBuilder();
@@ -412,10 +415,17 @@ class _CupertinoBackGestureController<T> {
       _animateForward();
     } else {
       if (hasScopedWillPopCallback) {
-        _animateForward();
+        RoutePopDisposition? disposition;
+
+        Future<void>.delayed(
+            const Duration(milliseconds: _kAnimateForwardDelay), () {
+          if (disposition != RoutePopDisposition.pop) {
+            _animateForward();
+          }
+        });
 
         navigator.didStopUserGesture();
-        final RoutePopDisposition disposition = await willPop();
+        disposition = await willPop();
         navigator.didStartUserGesture();
 
         if (disposition == RoutePopDisposition.pop) _pop();

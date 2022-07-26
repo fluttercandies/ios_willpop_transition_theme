@@ -36,15 +36,28 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Example')),
       body: Center(
-        // Consumer is a widget that allows you reading providers.
-        // You could also use the hook "ref.watch(" if you uses flutter_hooks
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => const TestPage(),
-            ));
-          },
-          child: const Text('Push'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // Consumer is a widget that allows you reading providers.
+          // You could also use the hook "ref.watch(" if you uses flutter_hooks
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => const TestPage(),
+                ));
+              },
+              child: const Text('Push will pop dialog'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => const TestPage(returnTrue: true),
+                ));
+              },
+              child: const Text('Push will pop return true'),
+            ),
+          ],
         ),
       ),
     );
@@ -52,7 +65,9 @@ class Home extends StatelessWidget {
 }
 
 class TestPage extends StatefulWidget {
-  const TestPage({Key? key}) : super(key: key);
+  const TestPage({Key? key, this.returnTrue = false}) : super(key: key);
+
+  final bool returnTrue;
 
   @override
   State<TestPage> createState() => _TestPageState();
@@ -63,6 +78,8 @@ class _TestPageState extends State<TestPage> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
+        if (widget.returnTrue) return true;
+
         final bool? result = await showDialog(
           context: context,
           builder: (_) => Center(

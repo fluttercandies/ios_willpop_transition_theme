@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Modify readme
+
+## 0.0.4
+
+* Remove unnecessary animations
