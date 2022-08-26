@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Remove unnecessary animations
+
+## 0.0.5
+
+* Add local route

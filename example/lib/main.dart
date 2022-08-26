@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
+                Navigator.of(context).push(WillPopPageRoute(
                   builder: (_) => const TestPage(),
                 ));
               },
