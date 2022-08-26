@@ -38,8 +38,6 @@ class Home extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          // Consumer is a widget that allows you reading providers.
-          // You could also use the hook "ref.watch(" if you uses flutter_hooks
           children: <Widget>[
             ElevatedButton(
               onPressed: () {

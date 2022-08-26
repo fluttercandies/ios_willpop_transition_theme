@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * Add local route
+
+## 0.0.6
+
+* Modify readme
