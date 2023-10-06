@@ -419,7 +419,8 @@ class _CupertinoBackGestureController<T> {
 
         Future<void>.delayed(
             const Duration(milliseconds: _kAnimateForwardDelay), () {
-          if (disposition != RoutePopDisposition.pop) {
+          if (disposition != RoutePopDisposition.pop &&
+              !controller.isAnimating) {
             _animateForward();
           }
         });
